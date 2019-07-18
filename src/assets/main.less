@@ -1,0 +1,119 @@
+@maincolor: #FF5A4B;
+@tabcolor: #B44B4D;
+@toastcolr: #F9F3DD;
+@toastfont: #EBB45F;
+@redcolor: #F41C1C;
+@mainfont: #333333;
+@subfont: #666666;
+@greycolor: #999999;
+@bordercolor: #ededed;
+
+@header-default-height:44px;
+@modal-default-border-radius:6px;
+@modal-default-zindex:999;
+@modal-default-footer-height:50px;
+@modal-default-footer-border:1px solid #e6e6e6;
+@item-selected-color:#F1F1F1;
+@toast-default-bg-color:#5a5a5a;
+@toast-default-height:40px;
+@input-height:25px;
+@button-height:40px;
+
+* {
+  margin: 0;
+  padding: 0;
+  color: @mainfont;
+}
+
+html,body {
+  height: 100%;
+  background-color: #fff;
+}
+
+ b {
+  font-weight: normal;
+}
+
+textarea, input, button {
+  -webkit-appearance: none;
+  outline: none;
+  border: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+li {
+  list-style: none;
+}
+
+.qg-vbox {
+  display: flex;
+  display: -webkit-flex;
+  flex-direction: column;
+  -webkit-flex-direction: column;
+  justify-content: center;
+  -webkit-justify-content: center;
+}
+.qg-cbox {
+  display: flex;
+  display: -webkit-flex;
+  align-items: center;
+  -webkit-align-items: center;
+  justify-content: center;
+  -webkit-justify-content: center;
+}
+.qg-cvbox {
+  display: flex;
+  display: -webkit-flex;
+  flex-direction: column;
+  -webkit-flex-direction: column;
+  align-items: center;
+  -webkit-align-items: center;
+  justify-content: center;
+  -webkit-justify-content: center;
+}
+.qg-box {
+  display: flex;
+  display: -webkit-flex;
+  align-items: center;
+  -webkit-align-items: center;
+}
+
+.qg-flex-1 {
+  flex: 1;
+  -webkit-flex: 1;
+  width: 0;
+}
+
+::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+  color: @greycolor;
+}
+
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+  color: @greycolor;
+}
+
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+  color: @greycolor;
+}
+
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+  color: @greycolor;
+}
+
+.vertical{
+  position: absolute;
+  top:50%;
+  -webkit-transform: translate(0, -50%);
+  -moz-transform: translate(0, -50%);
+  -ms-transform: translate(0, -50%);
+  -o-transform: translate(0, -50%);
+  transform: translate(0, -50%);
+}
+.greybar{
+  height:10px;
+  background-color: #f7f7f7;
+}
+

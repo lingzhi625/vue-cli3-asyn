@@ -1,0 +1,15 @@
+export const CLOSE_ACTIONSHEET = "qg/CLOSE_ACTIONSHEET";
+export const OPEN_ACTIONSHEET = "qg/OPEN_ACTIONSHEET";
+export const CLOSE_MODAL = "qg/CLOSE_MODAL";
+export const OPEN_MODAL = "qg/OPEN_MODAL";
+export const CLOSE_TOAST = "qg/CLOSE_TOAST";
+export const OPEN_TOAST = "qg/OPEN_TOAST";
+export const OPEN_NOTICEBAR_ALL = "qg/OPEN_NOTICEBAR_ALL";
+export const OPEN_LOADING = "QG/OPEN_LOADING";
+export const CLOSE_LOADING = "QG/CLOSE_LOADING";
+export const OPEN_NOTICEBAR = "QG/OPEN_NOTICEBAR";
+export const CLOSE_NOTICEBAR = "QG/CLOSE_NOTICEBAR";
+export const OPEN_PICKER = "qg/OPEN_PICKER";
+export const CLOSE_PICKER = "qg/CLOSE_PICKER";
+export const CHANGE_TITLE = "qg/CHANGE_TITLE";
+export const CHANGE_HEADER = "qg/CHANGE_HEADER";
