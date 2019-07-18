@@ -14,7 +14,7 @@
             v-show="front.again"
             isFront="1"
             @changeinput="imgChange1"
-            @resizeend="resizeEnd1"
+            @resizeend="resizeEnd"
           ></upFile>
         </div>
       </div>
@@ -25,7 +25,7 @@
               v-show="front.again"
               isFront="1"
               @changeinput="imgChange1"
-              @resizeend="resizeEnd1"
+              @resizeend="resizeEnd"
             ></upFile
             ><img :src="front.src" alt="" /><b></b>
           </div>
@@ -40,7 +40,7 @@
                   v-show="front.again"
                   isFront="1"
                   @changeinput="imgChange1"
-                  @resizeend="resizeEnd1"
+                  @resizeend="resizeEnd"
                 ></upFile
               ></span>
             </p>
@@ -57,7 +57,7 @@
             v-show="back.again"
             isFront="0"
             @changeinput="imgChange1"
-            @resizeend="resizeEnd2"
+            @resizeend="resizeEnd"
           ></upFile>
         </div>
       </div>
@@ -68,7 +68,7 @@
               v-show="back.again"
               isFront="0"
               @changeinput="imgChange2"
-              @resizeend="resizeEnd2"
+              @resizeend="resizeEnd"
             ></upFile
             ><img :src="back.src" alt="" /><b></b>
           </div>
@@ -92,7 +92,7 @@
                   v-show="back.again"
                   isFront="0"
                   @changeinput="imgChange2"
-                  @resizeend="resizeEnd2"
+                  @resizeend="resizeEnd"
                 ></upFile
               ></span>
             </p>
@@ -306,40 +306,28 @@ export default {
         this.$store.dispatch("openLoading");
       }, 200);
     },
-    resizeEnd1(data) {
+    resizeEnd(data) {
       console.log("resizeEnd1-data", data)
-      this.front.again = false;
+      this[data.str].again = false;
       clearTimeout(timer);
       this.$store.dispatch("closeLoading");
-      this.front.src = "data:image/jpeg;base64," + data;
+      this[data.str].src = "data:image/jpeg;base64," + data.sendData;
       setTimeout(() => {
-        this.front.again = true;
+        this[data.str].again = true;
       }, 10);
       // this.perception(data, 1);
-      this.perception(data, 'front');
-    },
-    resizeEnd2(data) {
-      console.log("resizeEnd2-data", data)
-      this.back.again = false;
-      clearTimeout(timer);
-      this.$store.dispatch("closeLoading");
-      this.back.src = "data:image/jpeg;base64," + data;
-      setTimeout(() => {
-        this.back.again = true;
-      }, 10);
-      // this.perception(data, 2);
-      this.perception(data, 'back');
+      this.perception(data.sendData, data.str);
     },
     perception(sendData, str) {
       console.log("perception-sendData", sendData)
-      let imgScr = "data:image/jpeg;base64," + sendData;
+      let imgSrc = "data:image/jpeg;base64," + sendData;
       if(str === 'front') {
         this.front.shoot = true;
-        this.front.src = imgScr;
+        this.front.src = imgSrc;
       }
       if(str === 'back') {
         this.back.shoot = true;
-        this.back.src = imgScr;
+        this.back.src = imgSrc;
       }
       // this.frontInfo = idInfo;
       // ocrApi.ocrUpLoad(sendData).then(res => {

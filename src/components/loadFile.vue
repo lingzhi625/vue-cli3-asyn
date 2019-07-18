@@ -75,7 +75,7 @@ export default {
             setTimeout(() => {
               this.showCanvas = true
             }, 200)
-            this.$emit('resizeend', sendData)
+            this.$emit('resizeend', {sendData: sendData, str: this.isFront === '1' ? 'front': 'back'})
           }
 
         }
