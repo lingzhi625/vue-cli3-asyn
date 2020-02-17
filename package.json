@@ -11,8 +11,9 @@
   "dependencies": {
     "better-scroll": "^1.15.2",
     "clipboard": "^2.0.4",
-    "core-js": "^2.6.5",
+    "core-js": "^3.6.4",
     "fastclick": "^1.0.6",
+    "husky": "^4.2.3",
     "js-cookie": "^2.2.0",
     "qg-px2rem-webpack": "^1.0.0",
     "qg-scroll": "^1.4.2",
@@ -26,6 +27,8 @@
     "vuex": "^3.0.1"
   },
   "devDependencies": {
+    "@commitlint/cli": "^8.3.5",
+    "@commitlint/config-conventional": "^8.3.4",
     "@vue/cli-plugin-babel": "^3.7.0",
     "@vue/cli-plugin-eslint": "^3.7.0",
     "@vue/cli-service": "^3.7.0",
